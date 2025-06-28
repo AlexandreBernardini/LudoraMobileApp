@@ -8,9 +8,8 @@ import {
     SafeAreaView,
     Image,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { MaterialIcons } from '@expo/vector-icons';
-import Svg, { RadialGradient, Stop, Rect, Path, LinearGradient as SvgLinearGradient, Defs } from 'react-native-svg';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Svg, { RadialGradient, Stop, Rect} from 'react-native-svg';
 
 interface UserTypeCardProps {
     title: string;
@@ -23,7 +22,7 @@ const UserTypeCard: React.FC<UserTypeCardProps> = ({ title, iconName, onPress })
         <Text style={styles.userTypeTitle}>{title}</Text>
         <TouchableOpacity style={styles.userCard} onPress={onPress}>
             <View style={styles.iconContainer}>
-                <MaterialIcons name={iconName} size={50} color="#FFFFFF" />
+                <MaterialIcons name={iconName} size={90} color="#FFFFFF" />
             </View>
         </TouchableOpacity>
     </View>
@@ -167,12 +166,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 20,
         paddingTop: 20,
-        paddingBottom: 30,
     },
     logoImage: {
         width: 200,
         height: 60,
         marginBottom: 10,
+        marginTop: 20,
         backgroundColor: 'transparent', // Assure-toi qu'il n'y a pas de background
     },
     subtitle: {
@@ -214,12 +213,6 @@ const styles = StyleSheet.create({
     headerButtonTextSecondary: {
         color: '#FFFFFF',
     },
-    decorativeLine: {
-        marginTop: 25,
-        marginBottom: 10,
-        alignItems: 'center',
-        width: '100%',
-    },
     content: {
         flex: 1,
         paddingHorizontal: 20,
@@ -237,15 +230,14 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     userCard: {
+        flex:1,
         backgroundColor: 'transparent',
         borderWidth: 3,
         borderColor: '#FFD700',
         borderRadius: 15,
-        padding: 100,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '60%', // Prend 60% de la largeur disponible
-        height: 140,
+        width: '80%', // Prend 60% de la largeur disponible
         alignSelf: 'center',
     },
     iconContainer: {
@@ -254,7 +246,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         alignItems: 'center',
-        paddingBottom: 40,
+        paddingBottom: 30,
         paddingHorizontal: 20,
     },
     footerText: {
